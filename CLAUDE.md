@@ -11,4 +11,5 @@ Tiny Node.js CLI that prints random quotes from `quotes.txt`.
 ```
 node quote.js              # print one random quote
 node quote.js --count 3    # print 3 random quotes
+node quote.js --json       # print as JSON array
 ```

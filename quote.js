@@ -18,7 +18,10 @@ if (require.main === module) {
   const args = process.argv.slice(2);
   const i = args.indexOf('--count');
   const count = i !== -1 ? parseInt(args[i + 1], 10) : 1;
-  pickRandom(getQuotes(), count).forEach(q => console.log(q));
+  const json = args.includes('--json');
+  const picked = pickRandom(getQuotes(), count);
+  if (json) console.log(JSON.stringify(picked));
+  else picked.forEach(q => console.log(q));
 }
 
 module.exports = { getQuotes, pickRandom };
